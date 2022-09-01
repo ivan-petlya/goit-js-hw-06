@@ -11,7 +11,7 @@ for (let i = 0; i < ingredients.length; i += 1) {
   const tagLi = document.createElement("li");
   tagLi.textContent = ingredients[i];
   tagLi.classList.add("item");
-
+  tagLi.style.listStyleType = "none";
   console.log(tagLi);
   ulList.append(tagLi);
 }
@@ -24,6 +24,7 @@ for (let i = 0; i < ingredients.length; i += 1) {
 // });
 // const ulList = document.querySelector("#ingredients");
 // ulList.append(...ingridArray);
+
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
 // Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
