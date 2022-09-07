@@ -34,7 +34,6 @@ function changeBorderColor(event) {
     checkInput.classList.add("valid");
     checkInput.classList.remove("invalid");
   } else {
-    checkInput.classList.add("invalid");
-    checkInput.classList.remove("valid");
+    checkInput.classList.togle("invalid", "valid");
   }
 }
