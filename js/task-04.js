@@ -1,16 +1,26 @@
 ////////////ver1/////////////////////
-const counter = document.querySelector("#counter");
-const counterValue = counter.querySelector("#value");
-counterValue.textContent = 0;
-
-const buttonMinus = counter.querySelector(`button[data-action="decrement"]`);
-buttonMinus.addEventListener("click", () => {
-  counterValue.textContent -= 1;
+const counterForm = document.querySelector("#counter");
+const buttonMinus = counterForm.querySelector(
+  `button[data-action="decrement"]`
+);
+const buttonPlus = counterForm.querySelector(`button[data-action="increment"]`);
+const counterValue = counterForm.querySelector("#value");
+const counter = {
+  value: 0,
+  plusValue() {
+    this.value += 1;
+  },
+  minusValue() {
+    this.value -= 1;
+  },
+};
+buttonPlus.addEventListener("click", function () {
+  counter.plusValue();
+  counterValue.textContent = counter.value;
 });
-
-const buttonPlus = counter.querySelector(`button[data-action="increment"]`);
-buttonPlus.addEventListener("click", () => {
-  counterValue.textContent = counterValue.textContent * 1 + 1;
+buttonMinus.addEventListener("click", function () {
+  counter.minusValue();
+  counterValue.textContent = counter.value;
 });
 
 // Создай переменную counterValue в которой будет храниться текущее значение счетчика и инициализируй её значением 0.

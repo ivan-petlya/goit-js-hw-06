@@ -6,24 +6,15 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+
+const ingridArray = ingredients.map((el) => {
+  const listEements = document.createElement("li");
+  listEements.textContent = el;
+  listEements.classList.add("item");
+  return listEements;
+});
 const ulList = document.querySelector("#ingredients");
-for (let i = 0; i < ingredients.length; i += 1) {
-  const tagLi = document.createElement("li");
-  tagLi.textContent = ingredients[i];
-  tagLi.classList.add("item");
-  tagLi.style.listStyleType = "none";
-  console.log(tagLi);
-  ulList.append(tagLi);
-}
-////////вариант 2 ////////////////////
-// const ingridArray = ingredients.map((el) => {
-//   const listEements = document.createElement("li");
-//   listEements.textContent = el;
-//   listEements.classList.add("item");
-//   return listEements;
-// });
-// const ulList = document.querySelector("#ingredients");
-// ulList.append(...ingridArray);
+ulList.append(...ingridArray);
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
